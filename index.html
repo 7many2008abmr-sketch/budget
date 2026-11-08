@@ -79,7 +79,7 @@ nav button b{display:block;font-size:20px;font-weight:400}nav button.on{color:va
 .li button.gh{padding:4px 8px;font-size:13px}
 </style>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0f766e">
+<meta name="theme-color" content="#131a17">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="أهدافي">
@@ -567,6 +567,8 @@ function render(){
   if(modal)app.appendChild(sheet());
   if(qf){var qs=document.getElementById('qs');if(qs){qs.focus();qs.setSelectionRange(qs.value.length,qs.value.length)}qf=false}
 }
+function syncBar(){try{var m=document.querySelector&&document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',getComputedStyle(document.body).backgroundColor)}catch(e){}}
+var _render=render;render=function(){_render();syncBar()};
 applyRec();applyTheme();render();
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 if(document.addEventListener)document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){var t=ds();if(t!==today){today=t;if(vm===cur)vm=t.slice(0,7);cur=t.slice(0,7)}applyRec();render()}});
