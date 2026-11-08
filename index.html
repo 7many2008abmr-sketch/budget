@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أهدافي ومصاريفي</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--text:#16211e;--mut:#66736f;--ac:#0f766e;--on:#fff;--bd:#dde5e1;--neg:#c2410c;--pos:#15803d;--tr:#e3ebe7;--hero:#0f766e;--herot:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131a17;--card:#1c2521;--text:#dde6e1;--mut:#92a29b;--ac:#6cc4b0;--on:#0d1f1b;--bd:#2b3732;--neg:#e6a06a;--pos:#86d4a0;--tr:#2c3833;--hero:#24493f;--herot:#e6f2ee;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131a17;--card:#1c2521;--text:#dde6e1;--mut:#92a29b;--ac:#6cc4b0;--on:#0d1f1b;--bd:#2b3732;--neg:#e6a06a;--pos:#86d4a0;--tr:#2c3833;--hero:#24493f;--herot:#e6f2ee;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tajawal,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;line-height:1.5}
+main{max-width:520px;margin:0 auto;padding:14px 14px 130px}
+.hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+h1{font-size:22px;margin:0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}
+.card h3{margin:0 0 10px;font-size:15px}
+.grid3,.grid2{display:grid;gap:8px;margin-bottom:12px}
+.grid3{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:repeat(2,1fr)}
+.st{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 6px;text-align:center}
+.st span{display:block;font-size:12px;color:var(--mut)}.st b{font-size:17px}
+.pos b{color:var(--pos)}.neg b{color:var(--neg)}
+.hero{background:var(--hero);color:var(--herot);text-align:center;border:0;padding:10px 14px;font-size:14px}
+.hero span,.hero small{display:block;opacity:.9}.big{display:block;font-size:26px;line-height:1.3}
+.mnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.row{display:flex;gap:8px;margin-bottom:8px}
+input,select{flex:1;min-width:0;padding:11px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--text);font:inherit}
+button{padding:11px 14px;border:0;border-radius:10px;background:var(--ac);color:var(--on);font:inherit;font-weight:700;cursor:pointer}
+button.gh{background:transparent;color:var(--text);border:1px solid var(--bd);padding:6px 10px;font-weight:500;font-size:14px}
+button.ic{background:var(--card);color:var(--text);border:1px solid var(--bd);width:40px;height:40px;padding:0;font-size:20px}
+button.w{background:var(--tr);color:var(--text)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.gn{font-size:17px}.acts{display:flex;gap:4px;flex-shrink:0}
+.bar{height:12px;background:var(--tr);border-radius:99px;overflow:hidden;margin:10px 0 6px}
+.fill{height:100%;background:var(--ac);border-radius:99px;transition:width .3s}
+.stats{display:flex;justify-content:space-between;font-size:14px;color:var(--mut)}.stats b{color:var(--text)}
+.note{font-size:13px;color:var(--mut);margin:4px 0 8px}.done{color:var(--pos);font-weight:700}
+.li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--bd)}
+.li:first-of-type{border-top:0}.li .m{flex:1;min-width:0}.li small{display:block;color:var(--mut)}
+.chips{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px;padding-bottom:4px}
+.chip{flex-shrink:0;background:var(--card);color:var(--text);border:1px solid var(--bd);padding:6px 12px;font-weight:500;font-size:14px}
+.chip.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.cr{display:flex;align-items:center;gap:8px;margin:7px 0;font-size:14px}.cr .bar{flex:1;margin:0;height:8px}
+.empty{text-align:center;color:var(--mut);padding:18px 0}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;background:none;color:var(--mut);font-size:12px;font-weight:500;padding:6px}
+nav button b{display:block;font-size:20px;font-weight:400}nav button.on{color:var(--ac);font-weight:700}
+.fab{position:fixed;left:16px;bottom:calc(76px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;font-size:30px;padding:0;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;z-index:5}
+.sheet{background:var(--card);width:100%;max-width:520px;border-radius:20px 20px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.sheet h3{margin:0 0 12px}
+:root[data-pal="navy"]{--bg:#f7f4ee;--card:#fffdf9;--text:#1c2438;--mut:#6c6f7d;--ac:#1e2a44;--on:#f3e2b3;--bd:#e5dfd2;--tr:#ece6d8;--hero:#1e2a44;--herot:#f3e2b3}
+:root[data-pal="indigo"]{--bg:#f4f5fb;--card:#fff;--text:#1b1d3a;--mut:#6a6e8e;--ac:#5b5fc7;--on:#fff;--bd:#e0e2f1;--tr:#e8eaf7;--hero:#5b5fc7;--herot:#fff}
+@media (prefers-color-scheme:dark){:root[data-pal="navy"]:not([data-theme="light"]){--bg:#10141f;--card:#1a2030;--text:#e4e6ee;--mut:#9aa0b3;--ac:#d4b46a;--on:#1a1608;--bd:#2a3144;--tr:#262d40;--hero:#27304a;--herot:#f0dfb0}:root[data-pal="indigo"]:not([data-theme="light"]){--bg:#13141f;--card:#1c1e2e;--text:#e2e3f0;--mut:#9a9dba;--ac:#9ea2ee;--on:#14152a;--bd:#2b2e45;--tr:#2a2d44;--hero:#33377a;--herot:#e8e9ff}}
+:root[data-pal="navy"][data-theme="dark"]{--bg:#10141f;--card:#1a2030;--text:#e4e6ee;--mut:#9aa0b3;--ac:#d4b46a;--on:#1a1608;--bd:#2a3144;--tr:#262d40;--hero:#27304a;--herot:#f0dfb0}
+:root[data-pal="indigo"][data-theme="dark"]{--bg:#13141f;--card:#1c1e2e;--text:#e2e3f0;--mut:#9a9dba;--ac:#9ea2ee;--on:#14152a;--bd:#2b2e45;--tr:#2a2d44;--hero:#33377a;--herot:#e8e9ff}
+:root[data-pal="slate"]{--bg:#f1f3f5;--card:#fff;--text:#1f2630;--mut:#6b7684;--ac:#475569;--on:#fff;--bd:#dde2e8;--tr:#e6eaef;--hero:#475569;--herot:#fff}
+:root[data-pal="ocean"]{--bg:#f0f6f8;--card:#fff;--text:#13262d;--mut:#62767e;--ac:#0e7490;--on:#fff;--bd:#d9e6ea;--tr:#e4eef1;--hero:#0e7490;--herot:#fff}
+:root[data-pal="blue"]{--bg:#f2f6fd;--card:#fff;--text:#14213d;--mut:#64708a;--ac:#2563eb;--on:#fff;--bd:#dce5f5;--tr:#e6edfa;--hero:#2563eb;--herot:#fff}
+:root[data-pal="plum"]{--bg:#f8f3f9;--card:#fff;--text:#2a1830;--mut:#7a6a80;--ac:#7e3a8f;--on:#fff;--bd:#eadcee;--tr:#f0e6f3;--hero:#7e3a8f;--herot:#fff}
+:root[data-pal="rose"]{--bg:#fbf3f4;--card:#fff;--text:#2e1a1f;--mut:#80696e;--ac:#be4d68;--on:#fff;--bd:#f0dde0;--tr:#f6e8ea;--hero:#be4d68;--herot:#fff}
+:root[data-pal="sand"]{--bg:#f8f4ee;--card:#fffdf9;--text:#2b2218;--mut:#7a6d5c;--ac:#92603a;--on:#fff;--bd:#eadfcf;--tr:#f0e7d8;--hero:#92603a;--herot:#fff7ec}
+:root[data-pal="olive"]{--bg:#f4f5ee;--card:#fff;--text:#1f2616;--mut:#6c7560;--ac:#5f7a2f;--on:#fff;--bd:#e0e5d2;--tr:#e9edde;--hero:#5f7a2f;--herot:#fff}
+@media (prefers-color-scheme:dark){:root[data-pal="slate"]:not([data-theme="light"]){--bg:#14171b;--card:#1d2127;--text:#e1e5ea;--mut:#98a2b0;--ac:#a7b4c6;--on:#12161b;--bd:#2c323b;--tr:#292f37;--hero:#323b48;--herot:#e8edf3}:root[data-pal="ocean"]:not([data-theme="light"]){--bg:#0f1719;--card:#182225;--text:#dfeaed;--mut:#91a7ad;--ac:#5ec0d6;--on:#06222a;--bd:#263438;--tr:#243136;--hero:#164e5c;--herot:#e3f4f8}:root[data-pal="blue"]:not([data-theme="light"]){--bg:#10151f;--card:#192030;--text:#e1e7f3;--mut:#93a0ba;--ac:#7aa5f7;--on:#0b1a38;--bd:#28324a;--tr:#252e45;--hero:#1f3a78;--herot:#e6eeff}:root[data-pal="plum"]:not([data-theme="light"]){--bg:#171119;--card:#221a25;--text:#eadfee;--mut:#a995b0;--ac:#c68bd6;--on:#2a1030;--bd:#352a39;--tr:#31263a;--hero:#4a2a57;--herot:#f5e6fa}:root[data-pal="rose"]:not([data-theme="light"]){--bg:#191113;--card:#241a1c;--text:#f0e1e4;--mut:#b09aa0;--ac:#e68ba0;--on:#32101a;--bd:#38292c;--tr:#33262a;--hero:#5a2a36;--herot:#fbe8ed}:root[data-pal="sand"]:not([data-theme="light"]){--bg:#17130f;--card:#221c16;--text:#eadfd0;--mut:#a89885;--ac:#d9a577;--on:#2a1808;--bd:#352d24;--tr:#312920;--hero:#5a3d24;--herot:#f7e9d8}:root[data-pal="olive"]:not([data-theme="light"]){--bg:#12150e;--card:#1c2016;--text:#e3e8d6;--mut:#9aa58a;--ac:#a9c46a;--on:#1a2408;--bd:#2c3222;--tr:#292f1f;--hero:#3d4f1f;--herot:#eef5da}}
+:root[data-pal="slate"][data-theme="dark"]{--bg:#14171b;--card:#1d2127;--text:#e1e5ea;--mut:#98a2b0;--ac:#a7b4c6;--on:#12161b;--bd:#2c323b;--tr:#292f37;--hero:#323b48;--herot:#e8edf3}
+:root[data-pal="ocean"][data-theme="dark"]{--bg:#0f1719;--card:#182225;--text:#dfeaed;--mut:#91a7ad;--ac:#5ec0d6;--on:#06222a;--bd:#263438;--tr:#243136;--hero:#164e5c;--herot:#e3f4f8}
+:root[data-pal="blue"][data-theme="dark"]{--bg:#10151f;--card:#192030;--text:#e1e7f3;--mut:#93a0ba;--ac:#7aa5f7;--on:#0b1a38;--bd:#28324a;--tr:#252e45;--hero:#1f3a78;--herot:#e6eeff}
+:root[data-pal="plum"][data-theme="dark"]{--bg:#171119;--card:#221a25;--text:#eadfee;--mut:#a995b0;--ac:#c68bd6;--on:#2a1030;--bd:#352a39;--tr:#31263a;--hero:#4a2a57;--herot:#f5e6fa}
+:root[data-pal="rose"][data-theme="dark"]{--bg:#191113;--card:#241a1c;--text:#f0e1e4;--mut:#b09aa0;--ac:#e68ba0;--on:#32101a;--bd:#38292c;--tr:#33262a;--hero:#5a2a36;--herot:#fbe8ed}
+:root[data-pal="sand"][data-theme="dark"]{--bg:#17130f;--card:#221c16;--text:#eadfd0;--mut:#a89885;--ac:#d9a577;--on:#2a1808;--bd:#352d24;--tr:#312920;--hero:#5a3d24;--herot:#f7e9d8}
+:root[data-pal="olive"][data-theme="dark"]{--bg:#12150e;--card:#1c2016;--text:#e3e8d6;--mut:#9aa58a;--ac:#a9c46a;--on:#1a2408;--bd:#2c3222;--tr:#292f1f;--hero:#3d4f1f;--herot:#eef5da}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{background:var(--card);color:var(--text);border:1px solid var(--bd);border-radius:16px;padding:16px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-weight:500;font-size:15px;min-height:104px}
+.ti{font-size:30px;line-height:1.2}.tile small{color:var(--mut);font-size:12px}
+.toast{position:fixed;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));max-width:496px;margin:0 auto;background:var(--text);color:var(--bg);border-radius:12px;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;z-index:6}
+.toast button{background:transparent;color:var(--bg);text-decoration:underline;padding:4px 8px}
+.li button.gh{padding:4px 8px;font-size:13px}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f766e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="أهدافي">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+<main id="app"></main>
+<script>
+var KEY="app-v2",S=null;
+function uid(){return Math.random().toString(36).slice(2,9)}
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){S=null}
+if(!S||!S.goals){
+  S={goals:[],inc:{},exp:[],theme:"auto"};
+  try{var o=JSON.parse(localStorage.getItem("goals-v1")||"[]");
+  S.goals=o.map(function(g){return{id:uid(),name:g.name,icon:"🎯",target:g.target,saved:g.saved,date:""}})}catch(e){}
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+S.bud=S.bud||{};S.rec=S.rec||[];S.jam=S.jam||[];S.acc=S.acc||[];S.wish=S.wish||[];S.debt=S.debt||[];S.exin=S.exin||{};S.cats=S.cats||[];S.wk=S.wk||{on:false,amt:0};S.ch=S.ch||{on:false,base:10,start:'',done:[]};S.tpl=S.tpl||[];S.ru=S.ru||{on:false,step:5,goal:''};S.sd=S.sd||{};S.lock=S.lock||{};S.hc=S.hc||{};S.ev=S.ev||[];S.fx=S.fx||[];
+var CATS=[["أكل","🍽️"],["مواصلات","🚌"],["فواتير","🧾"],["ترفيه","🎮"],["صحة","💊"],["تسوق","🛍️"],["جمعية","🤝"],["ديون","💸"],["أخرى","📦"]];
+S.cats.forEach(function(c){CATS.push(c)});var ICONS=["🎯","🏍️","📱","💻","🚗","🏠","✈️","💍","🎓","🎁"];
+var MN=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+function ds(d){d=d||new Date();return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)}
+var today=ds(),cur=today.slice(0,7),vm=cur,page="home",modal=false,eg=-1,fc="",ee="",ei=-1,dg="",lg="",q="",qf=false,oc="",o6=false,edb="";
+function shift(ym,n){return ds(new Date(+ym.slice(0,4),+ym.slice(5)-1+n,1)).slice(0,7)}
+function mname(ym){return MN[+ym.slice(5)-1]+" "+ym.slice(0,4)}
+function f(n){if(S.hide)return '•••';return Number(n).toLocaleString("en-US",{maximumFractionDigits:2})}
+function sum(a,k){return a.reduce(function(s,x){return s+x[k]},0)}
+function mInc(ym){return sum(S.inc[ym]||[],"amt")}
+function mExpL(ym){return S.exp.filter(function(e){return e.date.slice(0,7)==ym})}
+function mExp(ym){return sum(mExpL(ym),"amt")}
+function catIcon(c){var r="📦";CATS.forEach(function(x){if(x[0]==c)r=x[1]});return r}
+function h(t,p){
+  var e=document.createElement(t);p=p||{};
+  for(var a in p){if(a=="class")e.className=p[a];else if(a=="value")e.value=p[a];else if(a.slice(0,2)=="on")e[a]=p[a];else e.setAttribute(a,p[a])}
+  for(var i=2;i<arguments.length;i++){var k=arguments[i];if(k==null||k===false)continue;e.appendChild(typeof k=="object"?k:document.createTextNode(k))}
+  return e;
+}
+function applyRec(){var ch=false;S.rec.forEach(function(r){var m=shift(r.last,1);while(m<=cur){var dt=m+'-'+('0'+Math.min(r.day,28)).slice(-2);if(dt<=today){S.exp.push({id:uid(),amt:r.amt,cat:r.cat,note:r.name+' (ثابت)',date:dt});r.last=m;m=shift(m,1);ch=true}else break}});if(ch)save()}
+function stat(l,v,c){return h("div",{class:"st "+(c||"")},h("span",{},l),h("b",{},f(v)))}
+function mnav(){return h("div",{class:"mnav"},
+  h("button",{class:"ic",onclick:function(){vm=shift(vm,-1);render()}},"›"),
+  h("b",{},mname(vm)),
+  h("button",{class:"ic",onclick:function(){vm=shift(vm,1);render()}},"‹"))}
+function applyTheme(){var r=document.documentElement;if(S.pal)r.setAttribute('data-pal',S.pal);else r.removeAttribute('data-pal');if(S.theme=="auto")r.removeAttribute("data-theme");else r.setAttribute("data-theme",S.theme)}
+function isDark(){return S.theme=="dark"||(S.theme=="auto"&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)}
+
+function home(){
+  var inc=mInc(vm),ex=mExp(vm),rem=inc-ex,out=[mnav()];
+  var lim=ds(new Date(Date.now()+2*864e5));
+  S.debt.filter(function(x){return !x.done&&x.due&&x.due<=lim}).forEach(function(x){out.push(h('div',{class:'card note',style:'color:var(--neg)'},'⏰ '+(x.dir==='me'?'سداد لـ ':'استلام من ')+x.who+' ('+f(x.amt)+') · '+(x.due<today?'متأخر من '+x.due:'استحقاقه '+x.due)))});
+  if(vm==cur&&S.exp.length){var ld=S.exp.reduce(function(m,e){return e.date>m?e.date:m},'');var gap=Math.round((new Date(today)-new Date(ld))/864e5);if(gap>=3)out.push(h('div',{class:'card note',style:'color:var(--neg)'},'🔔 من '+gap+' أيام مسجلتش أي مصروف، فاكر تسجّل؟'))}
+  out.push(h("div",{class:"grid3"},stat("دخل الشهر",inc,"pos"),stat("مصروفات الشهر",ex,"neg"),stat("المتبقي",rem,rem<0?"neg":"")));
+  if(vm==cur){
+    var dt=new Date(),dim=new Date(dt.getFullYear(),dt.getMonth()+1,0).getDate(),left=dim-dt.getDate()+1;
+    var te=sum(S.exp.filter(function(e){return e.date==today}),"amt"),al=Math.max(0,(inc-(ex-te))/left),lt=al-te;
+    out.push(h("div",{class:"card hero"},h("span",{},"الحد اليومي المسموح"),h("b",{class:"big"},f(al)),
+      h("span",{},inc>0?(lt>=0?"فاضل لك النهاردة "+f(lt):"عدّيت الحد النهاردة بـ "+f(-lt)):"سجّل دخل الشهر عشان يتحسب الحد"),
+      h("small",{},"محسوب على "+left+" يوم باقي في الشهر")));
+  }
+  var gs=sum(S.goals,'saved'),ai=Object.keys(S.inc).reduce(function(s,k){return s+sum(S.inc[k],'amt')},0),ae=sum(S.exp,'amt'),hasAcc=S.acc.length>0,tot=hasAcc?sum(S.acc,'bal'):ai-ae,fr=tot-gs;
+  out.push(h('div',{class:'card'},h('h3',{},'فلوسي'),h('div',{class:'grid3',style:'margin:0'},stat('الإجمالي',tot,tot<0?'neg':''),stat('في الأهداف',gs,'pos'),stat('مش متضاف لهدف',fr,fr<0?'neg':'pos')),h('div',{class:'note',style:'margin:8px 0 0'},(hasAcc?'الإجمالي = مجموع أرصدة حساباتك':'الإجمالي = كل دخلك ناقص كل مصروفاتك')+(fr<0?' · ⚠️ الأهداف أكتر من إجمالي فلوسك':''))));
+  out.push(h('div',{class:'grid2'},stat('إجمالي الدخل',ai,'pos'),stat('إجمالي المصروفات',ae,'neg')));
+  var op=S.goals.filter(function(g){return g.saved<g.target}).sort(function(a,b){return b.saved/b.target-a.saved/a.target})[0];
+  if(op){var p=Math.round(op.saved/op.target*100);
+    out.push(h("div",{class:"card"},h("h3",{},"أقرب هدف توصله"),h("b",{class:"gn"},op.icon+" "+op.name),
+      h("div",{class:"bar"},h("div",{class:"fill",style:"width:"+p+"%"})),
+      h("div",{class:"stats"},h("span",{},p+"%"),h("span",{},"فاضل "+f(op.target-op.saved)))))}
+  var by={};mExpL(vm).forEach(function(e){by[e.cat]=(by[e.cat]||0)+e.amt});
+  var ks=Object.keys(by).sort(function(a,b){return by[b]-by[a]});
+  var cc=h("div",{class:"card"},h("h3",{},"المصروفات حسب الفئة"));
+  if(!ks.length)cc.appendChild(h("div",{class:"empty"},"مفيش مصروفات الشهر ده"));
+  ks.forEach(function(k){cc.appendChild(h("div",{class:"cr",style:"cursor:pointer",onclick:function(){oc=oc===k?"":k;render()}},h("span",{style:"width:90px"},catIcon(k)+" "+k),
+    h("div",{class:"bar"},h("div",{class:"fill",style:"width:"+Math.round(by[k]/ex*100)+"%"})),h("b",{},f(by[k]))))});
+  if(ks.length){cc.appendChild(h('div',{class:'note'},'اضغط على أي فئة عشان تشوف تفاصيلها'));
+  if(oc&&ks.indexOf(oc)>-1){var dl=h('div',{style:'margin:0 0 8px;padding:2px 10px;background:var(--bg);border-radius:10px'});
+    mExpL(vm).filter(function(e){return e.cat===oc}).sort(function(a,b){return a.date<b.date?1:-1}).forEach(function(e){dl.appendChild(h('div',{class:'li'},h('div',{class:'m'},e.note||e.cat,h('small',{},e.date)),h('b',{style:'color:var(--neg)'},f(e.amt))))});
+    cc.children[ks.indexOf(oc)+1].after(dl)}}
+  homeX(out);if(ks.length)out.push(donut(by,ks));out.push(cc);if(ks.length)out.push(cmpCard(by,ks));
+  var bk=CATS.filter(function(c){return S.bud[c[0]]>0});
+  if(bk.length){var bc=h('div',{class:'card'},h('h3',{},'الميزانيات'));
+    var wn=bk.filter(function(c){return (by[c[0]]||0)/S.bud[c[0]]>=.8}).map(function(c){return c[0]});
+    if(wn.length)bc.appendChild(h('div',{class:'note',style:'color:var(--neg)'},'⚠️ تنبيه: قربت أو عدّيت الميزانية في '+wn.join('، ')));
+    bk.forEach(function(c){var b=S.bud[c[0]],s=by[c[0]]||0,p=Math.round(s/b*100);
+      bc.appendChild(h('div',{class:'cr'},h('span',{style:'width:90px'},c[1]+' '+c[0]),h('div',{class:'bar'},h('div',{class:'fill',style:'width:'+Math.min(100,p)+'%;'+(p>=100?'background:var(--neg)':p>=80?'background:#d4a017':'')})),h('b',{style:p>=100?'color:var(--neg)':''},p>=100?'عدّيت':p+'%')))});
+    out.push(bc)}
+  var ch=h('div',{class:'card'},h('h3',{},'آخر ٦ شهور'));var mx=1,ms=[];
+  for(var k=5;k>=0;k--){var m=shift(cur,-k);ms.push([m,mInc(m),mExp(m)]);mx=Math.max(mx,mInc(m),mExp(m))}
+  var cols=h('div',{style:'display:flex;gap:6px'});
+  ms.forEach(function(x){cols.appendChild(h('div',{style:'flex:1;text-align:center;font-size:11px;color:var(--mut)'},h('div',{style:'display:flex;gap:2px;align-items:flex-end;justify-content:center;height:90px'},h('div',{style:'width:40%;background:var(--pos);border-radius:4px 4px 0 0;height:'+Math.round(x[1]/mx*100)+'%'}),h('div',{style:'width:40%;background:var(--neg);border-radius:4px 4px 0 0;height:'+Math.round(x[2]/mx*100)+'%'})),MN[+x[0].slice(5)-1]))});
+  ch.appendChild(cols);ch.appendChild(h('div',{class:'note'},'الأخضر دخل، والبرتقالي مصروف'));ch.appendChild(h('button',{class:'gh',style:'width:100%;margin-top:4px',onclick:function(){o6=!o6;render()}},o6?'إخفاء التفاصيل ▴':'عرض التفاصيل ▾'));
+  if(o6)ms.slice().reverse().forEach(function(x){ch.appendChild(h('div',{class:'li'},h('div',{class:'m'},mname(x[0]),h('small',{},'دخل '+f(x[1])+' · مصروف '+f(x[2]))),h('b',{style:'color:var('+(x[1]-x[2]<0?'--neg':'--pos')+')'},f(x[1]-x[2]))))});
+  out.push(ch);
+  return out.filter(function(c){var t=c.firstChild?c.firstChild.textContent:'';return !S.hc[t]});
+}
+
+function iconSel(v){var s=h("select",{style:"flex:0 0 70px"});ICONS.forEach(function(i){var o=h("option",{value:i},i);if(i==v)o.selected=true;s.appendChild(o)});return s}
+function move(i,d){var j=i+d;if(j<0||j>=S.goals.length)return;var t=S.goals[i];S.goals[i]=S.goals[j];S.goals[j]=t;save();render()}
+function goalCard(g,i){
+  var c=h("div",{class:"card"});
+  if(eg===i){
+    var ic=iconSel(g.icon),n=h("input",{value:g.name}),t=h("input",{type:"number",inputmode:"decimal",value:g.target}),d=h("input",{type:"date",value:g.date||""});
+    c.appendChild(h("div",{class:"row"},ic,n));c.appendChild(h("div",{class:"row"},t,d));
+    c.appendChild(h("div",{class:"row"},
+      h("button",{onclick:function(){var nm=n.value.trim(),tv=parseFloat(t.value);if(!nm||!(tv>0))return;g.name=nm;g.target=tv;g.date=d.value;g.icon=ic.value;eg=-1;save();render()}},"حفظ"),
+      h("button",{class:"gh",onclick:function(){eg=-1;render()}},"إلغاء")));
+    return c;
+  }
+  var p=Math.min(100,Math.round(g.saved/g.target*100)),left=g.target-g.saved,info="";
+  if(left>0&&g.date){var ms=new Date(g.date+"T00:00:00")-new Date();info=ms<=0?"عدّى الموعد المستهدف":"لازم تحوّش "+f(left/Math.max(1,Math.ceil(ms/2629800000)))+" شهريًا لحد "+g.date}
+  c.appendChild(h("div",{class:"top"},h("b",{class:"gn"},g.icon+" "+g.name),h("span",{class:"acts"},
+    h("button",{class:"gh","aria-label":"فوق",onclick:function(){move(i,-1)}},"↑"),
+    h("button",{class:"gh","aria-label":"تحت",onclick:function(){move(i,1)}},"↓"),
+    h("button",{class:"gh",onclick:function(){eg=i;render()}},"✏️"),
+    h("button",{class:"gh",onclick:function(){if(dg===g.id){S.goals.splice(i,1);eg=-1;dg="";save();render()}else{dg=g.id;render()}}},dg===g.id?"تأكيد الحذف؟":"🗑"))));
+  c.appendChild(h("div",{class:"bar"},h("div",{class:"fill",style:"width:"+p+"%"})));
+  c.appendChild(h("div",{class:"stats"},h("span",{},"جمعت: ",h("b",{},f(g.saved))),h("span",{},p+"%"),h("span",{},"الهدف: ",h("b",{},f(g.target)))));
+  c.appendChild(left>0?h("div",{class:"note"},"فاضل لك: "+f(left)+(info?" · "+info:"")):h("div",{class:"note done"},"🎉 مبروك، حققت هدفك!"));
+  var lgs=g.log||[];
+  if(lgs.length)c.appendChild(h('button',{class:'gh',style:'margin:4px 0 8px',onclick:function(){lg=lg===g.id?'':g.id;render()}},'📜 السجل ('+lgs.length+')'));
+  if(lg===g.id)lgs.slice(-8).reverse().forEach(function(x){c.appendChild(h('div',{class:'li'},h('div',{class:'m'},x.d),h('b',{style:'color:var('+(x.a>0?'--pos':'--neg')+')'},(x.a>0?'+':'')+f(x.a))))});
+  var inp=h("input",{type:"number",inputmode:"decimal",placeholder:"المبلغ"});
+  c.appendChild(h("div",{class:"row",style:"margin:0"},inp,
+    h("button",{onclick:function(){var v=parseFloat(inp.value);if(v>0){g.saved+=v;(g.log=g.log||[]).push({d:today,a:v});save();render()}}},"+ إضافة"),
+    h("button",{class:"w",onclick:function(){var v=parseFloat(inp.value);if(v>0){g.saved=Math.max(0,g.saved-v);(g.log=g.log||[]).push({d:today,a:-v});save();render()}}},"− سحب")));
+  return c;
+}
+function goalsPage(){
+  var out=[],T=sum(S.goals,"target"),V=sum(S.goals,"saved");
+  if(S.goals.length){var R=S.goals.reduce(function(s,g){return s+Math.max(0,g.target-g.saved)},0),p=Math.min(100,Math.round(V/T*100));
+    out.push(h("div",{class:"card"},h("h3",{},"الإجمالي لكل الأهداف ("+p+"%)"),h("div",{class:"bar"},h("div",{class:"fill",style:"width:"+p+"%"})),
+      h("div",{class:"grid3",style:"margin:8px 0 0"},stat("جمعت",V,"pos"),stat("المطلوب",T),stat("فاضل",R,"neg"))))}
+  var n=h("input",{placeholder:"اسم الهدف (مثلاً: موتوسيكل)"}),t=h("input",{type:"number",inputmode:"decimal",placeholder:"المبلغ المطلوب"}),d=h("input",{type:"date"}),ic=iconSel("🎯");
+  out.push(h("div",{class:"card"},h("h3",{},"هدف جديد"),h("div",{class:"row"},ic,n),h("div",{class:"row"},t,d),
+    h("button",{style:"width:100%",onclick:function(){var nm=n.value.trim(),tv=parseFloat(t.value);if(!nm||!(tv>0))return;S.goals.push({id:uid(),name:nm,icon:ic.value,target:tv,saved:0,date:d.value});save();render()}},"إضافة هدف"),
+    h("div",{class:"note"},"التاريخ المستهدف اختياري، ولو كتبته هيحسب لك المطلوب شهريًا.")));
+  if(!S.goals.length)out.push(h("div",{class:"empty"},"لسه مفيش أهداف. أضف أول هدف من فوق."));
+  S.goals.forEach(function(g,i){out.push(goalCard(g,i))});
+  return out;
+}
+
+function expPage(){
+  var out=[mnav()],il=S.inc[vm]||[];
+  var src=h("input",{placeholder:"المصدر (مرتب، شغل إضافي...)"}),am=h("input",{type:"number",inputmode:"decimal",placeholder:"المبلغ"});
+  var ic=h("div",{class:"card"},h("h3",{},"دخل "+mname(vm)+": "+f(mInc(vm))));
+  var xp=S.exin[vm]||0,xi=h('input',{type:'number',inputmode:'decimal',placeholder:'متوقع تقبض كام الشهر ده؟',value:xp||''});
+  ic.appendChild(h('div',{class:'row'},xi,h('button',{class:'w',onclick:function(){var v=parseFloat(xi.value);if(v>0)S.exin[vm]=v;else delete S.exin[vm];save();render()}},'حفظ المتوقع')));
+  if(xp)ic.appendChild(h('div',{class:'note'},'المتوقع '+f(xp)+' · الفعلي '+f(mInc(vm))+' · '+(mInc(vm)>=xp?'زيادة ':'ناقص ')+f(Math.abs(mInc(vm)-xp))));
+  il.forEach(function(x,i){
+    if(ei===i){var xs=h("input",{value:x.src}),xa=h("input",{type:"number",inputmode:"decimal",value:x.amt});
+      ic.appendChild(h("div",{class:"li",style:"display:block"},h("div",{class:"row"},xs,xa),h("div",{class:"row",style:"margin:0"},
+        h("button",{onclick:function(){var v=parseFloat(xa.value);if(!(v>0))return;x.src=xs.value.trim()||"دخل";x.amt=v;ei=-1;save();render()}},"حفظ"),
+        h("button",{class:"gh",onclick:function(){ei=-1;render()}},"إلغاء"))));return}
+    ic.appendChild(h("div",{class:"li"},h("div",{class:"m"},x.src),h("b",{style:"color:var(--pos)"},f(x.amt)),
+      h("button",{class:"gh",onclick:function(){ei=i;render()}},"✏️"),
+      h("button",{class:"gh",onclick:function(){var rm=il.splice(i,1)[0];S.inc[vm]=il;save();toast('اتحذف الدخل',function(){il.splice(i,0,rm);S.inc[vm]=il;save();render()})}},"✕")))});
+  ic.appendChild(h("div",{class:"row",style:"margin:8px 0 0"},src,am,h("button",{onclick:function(){var v=parseFloat(am.value);if(!(v>0))return;(S.inc[vm]=S.inc[vm]||[]).push({id:uid(),src:src.value.trim()||"دخل",amt:v});save();render()}},"+")));
+  out.push(ic);
+  var chips=h("div",{class:"chips"},h("button",{class:"chip"+(fc?"":" on"),onclick:function(){fc="";render()}},"الكل"));
+  CATS.forEach(function(c){chips.appendChild(h("button",{class:"chip"+(fc==c[0]?" on":""),onclick:function(){fc=c[0];render()}},c[1]+" "+c[0]))});
+  out.push(h('input',{id:'qs',placeholder:'🔍 ابحث في المصاريف',value:q,style:'width:100%;margin-bottom:10px',oninput:function(){q=this.value.trim();qf=true;render()}}));out.push(h('button',{class:'gh',style:'margin-bottom:8px',onclick:function(){adv=!adv;render()}},adv?'إخفاء البحث المتقدم ▴':'بحث متقدم ▾'));
+  if(adv){var s1=h('input',{type:'number',placeholder:'أقل مبلغ',value:qmin||''}),s2=h('input',{type:'number',placeholder:'أعلى مبلغ',value:qmax||''}),t1=h('input',{type:'date',value:qd1}),t2=h('input',{type:'date',value:qd2});
+    out.push(h('div',{class:'card'},h('div',{class:'row'},s1,s2),h('div',{class:'note'},'من تاريخ / لحد تاريخ (بيدوّر في كل الشهور):'),h('div',{class:'row'},t1,t2),h('div',{class:'row',style:'margin:0'},h('button',{onclick:function(){qmin=parseFloat(s1.value)||0;qmax=parseFloat(s2.value)||0;qd1=t1.value;qd2=t2.value;render()}},'بحث'),h('button',{class:'gh',onclick:function(){qmin=0;qmax=0;qd1='';qd2='';render()}},'مسح'))))}
+  out.push(chips);tagChips(out);
+  var list=((qd1||qd2)?S.exp.filter(function(e){return (!qd1||e.date>=qd1)&&(!qd2||e.date<=qd2)}):mExpL(vm)).filter(function(e){return (!fc||e.cat==fc)&&(!q||((e.note||'')+e.cat).indexOf(q)>-1)&&(!qmin||e.amt>=qmin)&&(!qmax||e.amt<=qmax)&&(!ft||(e.note||'').indexOf(ft)>-1)}).sort(function(a,b){return a.date<b.date?1:-1});
+  var ec=h("div",{class:"card"},h("h3",{},"المصروفات: "+f(sum(list,"amt"))));
+  if(!list.length)ec.appendChild(h("div",{class:"empty"},"مفيش مصروفات. اضغط + عشان تضيف."));
+  var ld='';list.forEach(function(e){if(e.date!==ld){ld=e.date;ec.appendChild(h('div',{class:'note',style:'margin:10px 0 0;font-weight:700'},dayLabel(e.date)))}
+    if(ee===e.id){
+      var ea=h("input",{type:"number",inputmode:"decimal",value:e.amt}),es=h("select"),en=h("input",{value:e.note||"",placeholder:"ملاحظة"}),ed=h("input",{type:"date",value:e.date});
+      CATS.forEach(function(x){var o=h("option",{value:x[0]},x[1]+" "+x[0]);if(x[0]==e.cat)o.selected=true;es.appendChild(o)});
+      ec.appendChild(h("div",{class:"li",style:"display:block"},h("div",{class:"row"},ea,es),h("div",{class:"row"},en,ed),h("div",{class:"row",style:"margin:0"},
+        h("button",{onclick:function(){var v=parseFloat(ea.value);if(!(v>0)||!ed.value)return;if(S.lock[e.date.slice(0,7)])return;e.amt=v;e.cat=es.value;e.note=en.value.trim();e.date=ed.value;ee="";save();render()}},"حفظ"),
+        h("button",{class:"gh",onclick:function(){ee="";render()}},"إلغاء"))));return}
+    ec.appendChild(h("div",{class:"li"},h("span",{style:"font-size:22px"},catIcon(e.cat)),
+      h("div",{class:"m"},e.note||e.cat,h("small",{},e.cat+" · "+e.date)),h("b",{style:"color:var(--neg)"},f(e.amt)),
+      h("button",{class:"gh",onclick:function(){ee=e.id;render()}},"✏️"),
+      h("button",{class:"gh",onclick:function(){if(S.lock[e.date.slice(0,7)])return;S.exp=S.exp.filter(function(x){return x.id!=e.id});save();toast('اتحذف المصروف',function(){S.exp.push(e);save();render()})}},"✕")))});
+  out.push(ec);return out;
+}
+
+function sec(t){return h('div',{class:'card'},h('h3',{},t))}
+function morePageAll(){
+  var out=[],b=sec('الميزانية الشهرية لكل فئة'),bi={};
+  CATS.forEach(function(c){var i=h('input',{type:'number',inputmode:'decimal',placeholder:'بدون حد',value:S.bud[c[0]]||''});bi[c[0]]=i;b.appendChild(h('div',{class:'row'},h('span',{style:'width:90px;align-self:center'},c[1]+' '+c[0]),i))});
+  b.appendChild(h('button',{style:'width:100%',onclick:function(){CATS.forEach(function(c){var v=parseFloat(bi[c[0]].value);if(v>0)S.bud[c[0]]=v;else delete S.bud[c[0]]});save();render()}},'حفظ الميزانيات'));
+  b.appendChild(h('div',{class:'note'},'هيظهر لك تنبيه في الرئيسية لما توصل 80٪ من الحد.'));out.push(b);
+  var r=sec('المصاريف الثابتة (بتتسجل لوحدها كل شهر)');
+  S.rec.filter(function(){return false}).forEach(function(x,i){r.appendChild(h('div',{class:'li'},h('div',{class:'m'},catIcon(x.cat)+' '+x.name,h('small',{},'يوم '+x.day+' من كل شهر')),h('b',{},f(x.amt)),h('button',{class:'gh',onclick:function(){S.rec.splice(i,1);save();render()}},'✕')))});
+  S.rec.forEach(function(x){
+    if(er===x.id){var n1=h('input',{value:x.name}),a1=h('input',{type:'number',inputmode:'decimal',value:x.amt}),d1=h('input',{type:'number',value:x.day,style:'flex:0 0 70px'}),c1=h('select');
+      CATS.forEach(function(c){var o=h('option',{value:c[0]},c[1]+' '+c[0]);if(c[0]===x.cat)o.selected=true;c1.appendChild(o)});
+      r.appendChild(h('div',{class:'li',style:'display:block'},h('div',{class:'row'},n1,a1),h('div',{class:'row'},c1,d1),h('div',{class:'row',style:'margin:0'},h('button',{onclick:function(){var v=parseFloat(a1.value),dd=parseInt(d1.value);if(!n1.value.trim()||!(v>0)||!(dd>=1&&dd<=31))return;x.name=n1.value.trim();x.amt=v;x.day=dd;x.cat=c1.value;er='';save();render()}},'حفظ'),h('button',{class:'gh',onclick:function(){er='';render()}},'إلغاء'))));return}
+    r.appendChild(h('div',{class:'li'},h('div',{class:'m'},catIcon(x.cat)+' '+x.name,h('small',{},'يوم '+x.day+' من كل شهر')),h('b',{},f(x.amt)),h('button',{class:'gh',onclick:function(){er=x.id;render()}},'✏️'),h('button',{class:'gh',onclick:function(){S.rec.splice(S.rec.indexOf(x),1);save();render()}},'✕')))});
+  var rn=h('input',{placeholder:'الاسم (إنترنت...)'}),ra=h('input',{type:'number',inputmode:'decimal',placeholder:'المبلغ'}),rd=h('input',{type:'number',placeholder:'اليوم',value:1,style:'flex:0 0 70px'}),rc=h('select');
+  CATS.forEach(function(c){rc.appendChild(h('option',{value:c[0]},c[1]+' '+c[0]))});
+  r.appendChild(h('div',{class:'row'},rn,ra));
+  r.appendChild(h('div',{class:'row',style:'margin:0'},rc,rd,h('button',{onclick:function(){var v=parseFloat(ra.value),d=parseInt(rd.value);if(!rn.value.trim()||!(v>0)||!(d>=1&&d<=31))return;S.rec.push({id:uid(),name:rn.value.trim(),amt:v,cat:rc.value,day:d,last:shift(cur,-1)});applyRec();save();render()}},'+ إضافة')));out.push(r);
+  var j=sec('الجمعيات');
+  S.jam.filter(function(){return false}).forEach(function(x,i){var tot=x.inst*x.n;j.appendChild(h('div',{class:'li',style:'display:block'},
+    h('div',{class:'top'},h('b',{},'🤝 '+x.name),h('button',{class:'gh',onclick:function(){S.jam.splice(i,1);save();render()}},'✕')),
+    h('div',{class:'note'},'القسط '+f(x.inst)+' × '+x.n+' شهر = '+f(tot)+' · دورك رقم '+x.turn+' · دفعت '+x.paid+' من '+x.n+(x.got?' · استلمت ✅':'')),
+    h('div',{class:'bar'},h('div',{class:'fill',style:'width:'+Math.round(x.paid/x.n*100)+'%'})),
+    h('div',{class:'row',style:'margin:0'},
+      x.paid<x.n?h('button',{onclick:function(){x.paid++;S.exp.push({id:uid(),amt:x.inst,cat:'جمعية',note:'قسط '+x.name,date:today});save();render()}},'دفعت قسط الشهر'):null,
+      !x.got?h('button',{class:'w',onclick:function(){x.got=true;(S.inc[cur]=S.inc[cur]||[]).push({id:uid(),src:'قبض جمعية '+x.name,amt:tot});save();render()}},'استلمت الجمعية'):null)))});
+  S.jam.forEach(function(x){var tot=x.inst*x.n;
+    if(ej===x.id){var n2=h('input',{value:x.name}),i2=h('input',{type:'number',inputmode:'decimal',value:x.inst}),m2=h('input',{type:'number',value:x.n}),t2=h('input',{type:'number',value:x.turn});
+      j.appendChild(h('div',{class:'li',style:'display:block'},h('div',{class:'row'},n2,i2),h('div',{class:'row'},m2,t2),h('div',{class:'note'},'عدد الشهور / دورك رقم'),h('div',{class:'row',style:'margin:0'},h('button',{onclick:function(){var a=parseFloat(i2.value),n=parseInt(m2.value),t=parseInt(t2.value);if(!n2.value.trim()||!(a>0)||!(n>0)||!(t>=1&&t<=n))return;x.name=n2.value.trim();x.inst=a;x.n=n;x.turn=t;if(x.paid>n)x.paid=n;ej='';save();render()}},'حفظ'),h('button',{class:'gh',onclick:function(){ej='';render()}},'إلغاء'))));return}
+    j.appendChild(h('div',{class:'li',style:'display:block'},
+      h('div',{class:'top'},h('b',{},'🤝 '+x.name),h('span',{class:'acts'},h('button',{class:'gh',onclick:function(){ej=x.id;render()}},'✏️'),h('button',{class:'gh',onclick:function(){S.jam.splice(S.jam.indexOf(x),1);save();render()}},'✕'))),
+      h('div',{class:'note'},'القسط '+f(x.inst)+' × '+x.n+' شهر = '+f(tot)+' · دورك رقم '+x.turn+' · دفعت '+x.paid+' من '+x.n+(x.got?' · استلمت ✅':'')),
+      h('div',{class:'bar'},h('div',{class:'fill',style:'width:'+Math.round(x.paid/x.n*100)+'%'})),
+      h('div',{class:'row',style:'margin:0'},
+        x.paid<x.n?h('button',{onclick:function(){x.paid++;S.exp.push({id:uid(),amt:x.inst,cat:'جمعية',note:'قسط '+x.name,date:today});save();render()}},'دفعت قسط الشهر'):null,
+        !x.got?h('button',{class:'w',onclick:function(){x.got=true;(S.inc[cur]=S.inc[cur]||[]).push({id:uid(),src:'قبض جمعية '+x.name,amt:tot});save();render()}},'استلمت الجمعية'):null)))});
+  var jn=h('input',{placeholder:'اسم الجمعية'}),ji=h('input',{type:'number',inputmode:'decimal',placeholder:'القسط'}),jm=h('input',{type:'number',placeholder:'عدد الشهور'}),jt=h('input',{type:'number',placeholder:'دورك رقم'});
+  j.appendChild(h('div',{class:'row'},jn,ji));
+  j.appendChild(h('div',{class:'row',style:'margin:0'},jm,jt,h('button',{onclick:function(){var i=parseFloat(ji.value),n=parseInt(jm.value),t=parseInt(jt.value);if(!jn.value.trim()||!(i>0)||!(n>0)||!(t>=1&&t<=n))return;S.jam.push({id:uid(),name:jn.value.trim(),inst:i,n:n,turn:t,paid:0,got:false});save();render()}},'+ إضافة')));out.push(j);
+  var a=sec('الحسابات (إجمالي الرصيد: '+f(sum(S.acc,'bal'))+')');
+  S.acc.forEach(function(x,i){var ai=h('input',{type:'number',inputmode:'decimal',placeholder:'مبلغ'});
+    a.appendChild(h('div',{class:'li',style:'display:block'},h('div',{class:'top'},h('b',{},'💼 '+x.name+': '+f(x.bal)),h('button',{class:'gh',onclick:function(){S.acc.splice(i,1);save();render()}},'✕')),
+      h('div',{class:'row',style:'margin:6px 0 0'},ai,h('button',{onclick:function(){var v=parseFloat(ai.value);if(v>0){x.bal+=v;save();render()}}},'+'),h('button',{class:'w',onclick:function(){var v=parseFloat(ai.value);if(v>0){x.bal-=v;save();render()}}},'−'))))});
+  var an=h('input',{placeholder:'اسم الحساب (كاش، بنك...)'}),ab=h('input',{type:'number',inputmode:'decimal',placeholder:'الرصيد الحالي'});
+  a.appendChild(h('div',{class:'row',style:'margin:8px 0 0'},an,ab,h('button',{onclick:function(){if(!an.value.trim())return;S.acc.push({id:uid(),name:an.value.trim(),bal:parseFloat(ab.value)||0});save();render()}},'+')));out.push(a);more2(out);
+  return out;
+}
+var unlocked=false;
+function hp(s){var x=0;for(var i=0;i<s.length;i++)x=(x*31+s.charCodeAt(i))%1000000007;return 'p'+x}
+function lockScreen(app){var i=h('input',{type:'password',inputmode:'numeric',placeholder:'الكود السري',style:'text-align:center;font-size:20px'}),m=h('div',{class:'note',style:'text-align:center;color:var(--neg)'},'');
+  app.appendChild(h('div',{class:'card',style:'margin-top:20vh'},h('h3',{style:'text-align:center'},'🔒 التطبيق مقفول'),h('div',{class:'row'},i),h('button',{style:'width:100%',onclick:function(){if(hp(i.value.trim())===S.pin){unlocked=true;render()}else m.textContent='الكود غلط'}},'فتح'),m))}
+function streak(){var s={};S.exp.forEach(function(e){s[e.date]=1});var d=new Date(),n=0;if(!s[ds(d)])d.setDate(d.getDate()-1);while(s[ds(d)]){n++;d.setDate(d.getDate()-1)}return n}
+function more2(out){more3(out);
+  var inc=mInc(cur),ex=mExp(cur),el=mExpL(cur),top=el.slice().sort(function(a,b){return b.amt-a.amt})[0],by={};
+  el.forEach(function(e){by[e.cat]=(by[e.cat]||0)+e.amt});var tc=Object.keys(by).sort(function(a,b){return by[b]-by[a]})[0];
+  var s=sec('إحصائيات وإنجازات');
+  [['نسبة التوفير الشهر ده',inc>0?Math.round((inc-ex)/inc*100)+'٪':'—'],['متوسط الصرف اليومي',f(ex/new Date().getDate())],['أعلى مصروف',top?f(top.amt)+' ('+(top.note||top.cat)+')':'—'],['أكتر فئة صرفت فيها',tc?catIcon(tc)+' '+tc:'—'],['أيام تسجيل متتالية 🔥',streak()]].forEach(function(x){s.appendChild(h('div',{class:'li'},h('div',{class:'m'},x[0]),h('b',{},x[1])))});
+  var bd=[];if(S.exp.length)bd.push('✍️ سجّلت أول مصروف');if(S.goals.some(function(g){return g.saved>=g.target}))bd.push('🏆 حققت هدف');if(inc>0&&ex<inc)bd.push('💚 صرفت أقل من دخلك الشهر ده');if(streak()>=7)bd.push('🔥 أسبوع تسجيل متواصل');
+  s.appendChild(h('div',{class:'note'},bd.length?bd.join(' · '):'لسه مفيش إنجازات، كمّل وهتظهر.'));
+  s.appendChild(h('button',{class:'gh',style:'width:100%',onclick:function(){var t=0;for(var k=1;k<=3;k++)t+=mExp(shift(cur,-k));t=Math.round(t||ex*3);if(!(t>0))return;S.goals.push({id:uid(),name:'صندوق طوارئ',icon:'🛡️',target:t,saved:0,date:''});save();page='goals';render()}},'🛡️ أنشئ هدف صندوق طوارئ (مصاريف آخر ٣ شهور)'));out.push(s);
+  var w=sec('قايمة الأمنيات (استنى ٢٤ ساعة قبل ما تشتري)');
+  S.wish.forEach(function(x,i){var hrs=Math.ceil(24-(Date.now()-x.t)/36e5);
+    w.appendChild(h('div',{class:'li',style:'display:block'},h('div',{class:'top'},h('b',{},'🛍️ '+x.name+' · '+f(x.price)),h('button',{class:'gh',onclick:function(){S.wish.splice(i,1);save();render()}},'✕')),
+      h('div',{class:'note'},hrs>0?'⏳ استنى '+hrs+' ساعة وبعدين قرر':'✅ عدّت ٢٤ ساعة، لسه عايزه؟'),
+      hrs<=0?h('div',{class:'row',style:'margin:0'},h('button',{onclick:function(){S.exp.push({id:uid(),amt:x.price,cat:'تسوق',note:x.name,date:today});S.wish.splice(i,1);save();render()}},'اشتريته'),h('button',{class:'w',onclick:function(){S.goals.push({id:uid(),name:x.name,icon:'🎁',target:x.price,saved:0,date:''});S.wish.splice(i,1);save();render()}},'حوّله لهدف')):null))});
+  var wn=h('input',{placeholder:'اسم الحاجة'}),wp=h('input',{type:'number',inputmode:'decimal',placeholder:'السعر'});
+  w.appendChild(h('div',{class:'row',style:'margin:8px 0 0'},wn,wp,h('button',{onclick:function(){var v=parseFloat(wp.value);if(!wn.value.trim()||!(v>0))return;S.wish.push({id:uid(),name:wn.value.trim(),price:v,t:Date.now()});save();render()}},'+')));out.push(w);
+  var d=sec('الديون والسلف');
+  S.debt.filter(function(){return false}).forEach(function(x,i){var me=x.dir==='me';d.appendChild(h('div',{class:'li'},h('div',{class:'m'},x.who,h('small',{},me?'عليك تدفعه':'ليك عنده')),h('b',{style:'color:var('+(me?'--neg':'--pos')+')'},f(x.amt)),h('button',{class:'gh',onclick:function(){S.debt.splice(i,1);save();render()}},'تمت')))});
+  function settle(x,aid,dt){dt=dt||today;var a=S.acc.filter(function(k){return k.id===aid})[0];
+    if(x.dir==='me'){S.exp.push({id:uid(),amt:x.amt,cat:'ديون',note:'سداد سلفة لـ '+x.who,date:dt});if(a)a.bal-=x.amt}
+    else{(S.inc[dt.slice(0,7)]=S.inc[dt.slice(0,7)]||[]).push({id:uid(),src:'استلام سلفة من '+x.who,amt:x.amt});if(a)a.bal+=x.amt}
+    x.done=true;x.dd=dt;save();render()}
+  var act=S.debt.filter(function(x){return !x.done}),dn=S.debt.filter(function(x){return x.done});
+  var ow=act.filter(function(x){return x.dir==='me'}).reduce(function(s,x){return s+x.amt},0),ot=act.filter(function(x){return x.dir!=='me'}).reduce(function(s,x){return s+x.amt},0);
+  d.appendChild(h('div',{class:'note'},'عليك: '+f(ow)+' · ليك: '+f(ot)+' (مش داخلة في حساب فلوسك لحد ما تتسدد)'));
+  act.forEach(function(x){var me=x.dir==='me',sa=null,dI=h('input',{type:'date',value:today});
+    if(edb===x.id){var ew=h('input',{value:x.who}),ea=h('input',{type:'number',inputmode:'decimal',value:x.amt}),es=h('select',{style:'flex:0 0 80px'},h('option',{value:'me'},'عليّ'),h('option',{value:'they'},'ليّ'));es.value=x.dir;
+      d.appendChild(h('div',{class:'li',style:'display:block'},h('div',{class:'row'},ew,ea,es),h('div',{class:'row',style:'margin:0'},h('button',{onclick:function(){var v=parseFloat(ea.value);if(!ew.value.trim()||!(v>0))return;x.who=ew.value.trim();x.amt=v;x.dir=es.value;edb='';save();render()}},'حفظ'),h('button',{class:'gh',onclick:function(){edb='';render()}},'إلغاء'))));return}
+    if(S.acc.length){sa=h('select',{style:'flex:1'},h('option',{value:''},'من غير ربط بحساب'));S.acc.forEach(function(a){sa.appendChild(h('option',{value:a.id},a.name))})}
+    d.appendChild(h('div',{class:'li',style:'display:block'},h('div',{class:'top'},h('div',{class:'m'},h('b',{},x.who),h('small',{},(me?'عليك تدفعه':'ليك عنده')+(x.due?' · استحقاق '+x.due:''))),h('b',{style:'color:var('+(me?'--neg':'--pos')+')'},f(x.amt)),h('button',{class:'gh',onclick:function(){edb=x.id;render()}},'✏️'),h('button',{class:'gh',onclick:function(){S.debt.splice(S.debt.indexOf(x),1);save();render()}},'✕')),
+      h('div',{class:'note',style:'margin:6px 0 2px'},me?'تاريخ السداد:':'تاريخ الاستلام:'),h('div',{class:'row',style:'margin:0 0 6px'},dI),h('div',{class:'row',style:'margin:0'},sa,h('button',{onclick:function(){if(!dI.value)return;settle(x,sa?sa.value:'',dI.value)}},me?'سدّدت':'استلمت'))))});
+  if(dn.length){d.appendChild(h('div',{class:'note',style:'margin-top:10px'},'السجل (المسدّد) · حذف سطر هنا مش بيمسح المصروف أو الدخل المسجل'));dn.slice().reverse().forEach(function(x){d.appendChild(h('div',{class:'li'},h('div',{class:'m'},'✅ '+(x.dir==='me'?'سدّدت لـ ':'استلمت من ')+x.who,h('small',{},x.dd)),h('b',{},f(x.amt)),h('button',{class:'gh',onclick:function(){S.debt.splice(S.debt.indexOf(x),1);save();render()}},'✕')))})}
+  var dw=h('input',{placeholder:'مع مين؟'}),da=h('input',{type:'number',inputmode:'decimal',placeholder:'المبلغ'}),du=h('input',{type:'date'}),dd=h('select',{style:'flex:0 0 80px'},h('option',{value:'me'},'عليّ'),h('option',{value:'they'},'ليّ'));
+  d.appendChild(h('div',{class:'note',style:'margin-top:8px'},'تاريخ الاستحقاق (اختياري):'));d.appendChild(h('div',{class:'row'},du));d.appendChild(h('div',{class:'row',style:'margin:0'},dw,da,dd,h('button',{onclick:function(){var v=parseFloat(da.value);if(!dw.value.trim()||!(v>0))return;S.debt.push({id:uid(),who:dw.value.trim(),amt:v,dir:dd.value,due:du.value});save();render()}},'+')));out.push(d);
+  var bk=sec('نسخة احتياطية وتصدير'),msg=h('div',{class:'note'},'');
+  var ta=h('textarea',{rows:4,placeholder:'هنا هيظهر النص، أو الصق نسختك لاسترجاع بياناتك',style:'width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--text);font:12px monospace;direction:ltr;margin-bottom:8px'});
+  var cp=function(t){ta.value=t;ta.select();try{navigator.clipboard.writeText(t)}catch(e){}};
+  bk.appendChild(ta);
+  bk.appendChild(h('div',{class:'row'},
+    h('button',{onclick:function(){S.lastBk=today;save();cp(JSON.stringify(S));msg.textContent='اتنسخت بياناتك. حطها في ملاحظات الموبايل أو ابعتها لنفسك. ولو ما اتنسختش، اضغط مطوّلًا على النص واختار نسخ.'}},'نسخ البيانات'),
+    h('button',{class:'w',onclick:function(){var r=['التاريخ\tالفئة\tالملاحظة\tالمبلغ'];S.exp.slice().sort(function(a,b){return a.date<b.date?1:-1}).forEach(function(e){r.push([e.date,e.cat,e.note||'',e.amt].join('\t'))});cp(r.join('\n'));msg.textContent='اتنسخت المصاريف. الصقها في Excel أو Google Sheets وهتتقسم على أعمدة.'}},'تصدير للإكسل')));
+  bk.appendChild(h('button',{class:'gh',style:'width:100%',onclick:function(){var o=null;try{o=JSON.parse(ta.value.trim())}catch(e){}if(!o||!o.goals||!o.exp||!o.inc){msg.textContent='النص ده مش نسخة صحيحة.';return}S=o;S.bud=S.bud||{};S.rec=S.rec||[];S.jam=S.jam||[];S.acc=S.acc||[];S.wish=S.wish||[];S.debt=S.debt||[];S.exin=S.exin||{};S.cats=S.cats||[];S.wk=S.wk||{on:false,amt:0};S.ch=S.ch||{on:false,base:10,start:'',done:[]};S.tpl=S.tpl||[];S.ru=S.ru||{on:false,step:5,goal:''};S.sd=S.sd||{};S.lock=S.lock||{};S.hc=S.hc||{};S.ev=S.ev||[];S.fx=S.fx||[];S.cats.forEach(function(c){if(!CATS.some(function(x){return x[0]===c[0]}))CATS.push(c)});save();applyTheme();render()}},'استرجاع من النص اللي فوق'));
+  bk.appendChild(msg);out.push(bk);
+  var pc=sec('قفل التطبيق بكود سري'),pi=h('input',{type:'password',inputmode:'numeric',placeholder:S.pin?'كود جديد (أو سيبه فاضي لإلغاء القفل)':'كود من ٤ أرقام أو أكتر'});
+  pc.appendChild(h('div',{class:'row'},pi,h('button',{onclick:function(){var v=pi.value.trim();if(v&&v.length<4)return;if(v)S.pin=hp(v);else delete S.pin;save();render()}},S.pin?'تغيير':'تفعيل')));
+  pc.appendChild(h('div',{class:'note'},'قفل بسيط لإخفاء أرقامك عن أي حد يمسك موبايلك، مش حماية بنكية.'));out.push(pc);themeCard(out);
+}
+function donut(by,ks){var cl=['#0f766e','#d97706','#7c3aed','#db2777','#2563eb','#65a30d','#0891b2','#dc2626','#64748b'],T=0,a=0,st=[];
+  ks.forEach(function(k){T+=by[k]});
+  ks.forEach(function(k,i){var p=by[k]/T*100;st.push(cl[i%cl.length]+' '+a+'% '+(a+p)+'%');a+=p});
+  var lg=h('div',{style:'flex:1;font-size:13px'});
+  ks.forEach(function(k,i){lg.appendChild(h('div',{style:'display:flex;align-items:center;gap:6px;margin:3px 0'},h('span',{style:'width:10px;height:10px;border-radius:50%;flex-shrink:0;background:'+cl[i%cl.length]}),k+' '+Math.round(by[k]/T*100)+'٪'))});
+  var m='radial-gradient(circle 30px,transparent 29px,#000 30px)';
+  return h('div',{class:'card'},h('h3',{},'توزيع المصروفات'),h('div',{style:'display:flex;align-items:center;gap:14px'},h('div',{style:'width:110px;height:110px;border-radius:50%;flex-shrink:0;background:conic-gradient('+st.join(',')+');-webkit-mask:'+m+';mask:'+m}),lg))}
+function report(ym){var inc=mInc(ym),ex=mExp(ym),by={};mExpL(ym).forEach(function(e){by[e.cat]=(by[e.cat]||0)+e.amt});
+  var ks=Object.keys(by).sort(function(a,b){return by[b]-by[a]}),t=['تقرير '+mname(ym),'الدخل: '+f(inc),'المصروفات: '+f(ex),'الباقي: '+f(inc-ex)];
+  if(inc>0)t.push('نسبة التوفير: '+Math.round((inc-ex)/inc*100)+'٪');
+  if(ks.length){t.push('','المصروفات حسب الفئة:');ks.forEach(function(k){t.push('- '+k+': '+f(by[k]))})}
+  if(S.goals.length){t.push('','الأهداف:');S.goals.forEach(function(g){t.push('- '+g.name+': '+f(g.saved)+' من '+f(g.target))})}
+  var op=S.debt.filter(function(x){return !x.done});
+  if(op.length){t.push('','الديون المفتوحة:');op.forEach(function(x){t.push('- '+(x.dir==='me'?'عليّ لـ ':'ليّ عند ')+x.who+': '+f(x.amt))})}
+  return t.join('\n')}
+var NEED=['أكل','مواصلات','فواتير','صحة','ديون'],WANT=['ترفيه','تسوق','أخرى'];
+function more3(out){moreX(out);
+  var inc=mInc(cur),nd=0,wt=0;
+  mExpL(cur).forEach(function(e){var nn=e.kind==='need'||(!e.kind&&NEED.indexOf(e.cat)>-1),ww=e.kind==='want'||(!e.kind&&WANT.indexOf(e.cat)>-1);if(nn)nd+=e.amt;else if(ww)wt+=e.amt});
+  var sv=Math.max(0,inc-nd-wt),c=sec('قاعدة 50/30/20 ('+mname(cur)+')');
+  if(!(inc>0))c.appendChild(h('div',{class:'note'},'سجّل دخل الشهر الأول عشان تتحسب.'));
+  else [['احتياجات (أكل، مواصلات، فواتير، صحة، ديون)',nd,50,true],['رغبات (ترفيه، تسوق، أخرى)',wt,30,true],['توفير (الباقي + الجمعيات)',sv,20,false]].forEach(function(x){var p=Math.round(x[1]/inc*100),bad=x[3]?p>x[2]:p<x[2];
+    c.appendChild(h('div',{style:'margin:8px 0'},h('div',{class:'top',style:'font-size:14px'},h('span',{},x[0]),h('b',{style:'color:var('+(bad?'--neg':'--pos')+')'},p+'٪ من '+x[2]+'٪')),h('div',{class:'bar'},h('div',{class:'fill',style:'width:'+Math.min(100,p)+'%;'+(bad?'background:var(--neg)':'')}))))});
+  out.push(c);
+  var r=sec('تقرير '+mname(vm)),ta=h('textarea',{rows:6,style:'width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--text);font:13px Tajawal,sans-serif;margin-bottom:8px'}),msg=h('div',{class:'note'},'');
+  r.appendChild(ta);
+  r.appendChild(h('button',{style:'width:100%',onclick:function(){ta.value=report(vm);ta.select();try{navigator.clipboard.writeText(ta.value);msg.textContent='اتنسخ التقرير، تقدر تبعته أو تحفظه.'}catch(e){msg.textContent='اضغط مطوّلًا على النص واختار نسخ.'}}},'إنشاء ونسخ التقرير'));
+  r.appendChild(msg);out.push(r);
+}
+var PALS=[['','أخضر','#0f766e'],['slate','رمادي','#475569'],['navy','كحلي وذهبي','#1e2a44'],['indigo','بنفسجي','#5b5fc7'],['ocean','فيروزي','#0e7490'],['blue','أزرق','#2563eb'],['plum','برقوقي','#7e3a8f'],['rose','وردي','#be4d68'],['sand','رملي','#92603a'],['olive','زيتوني','#5f7a2f']];
+function themeCard(out){var c=sec('ألوان التطبيق'),g=h('div',{style:'display:grid;grid-template-columns:repeat(5,1fr);gap:8px'});
+  PALS.forEach(function(p){g.appendChild(h('button',{class:'gh',style:'display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 2px;font-size:12px;'+((S.pal||'')===p[0]?'border:2px solid var(--ac)':''),onclick:function(){if(p[0])S.pal=p[0];else delete S.pal;applyTheme();save();render()}},h('span',{style:'width:30px;height:30px;border-radius:50%;background:'+p[2]}),p[1]))});
+  c.appendChild(g);c.appendChild(h('div',{class:'note',style:'margin:8px 0 0'},'الألوان بتشتغل مع الوضع الفاتح والغامق، واختار اللي يريّح عينك.'));out.push(c)}
+var sub='';
+var SECS=[['budget','📊','الميزانيات','الميزانية الشهرية'],['rec','🔁','المصاريف الثابتة','المصاريف الثابتة'],['jam','🤝','الجمعيات','الجمعيات'],['acc','💼','الحسابات','الحسابات'],['debt','💸','الديون والسلف','الديون والسلف'],['wish','🛍️','قايمة الأمنيات','قايمة الأمنيات'],['rule','⚖️','قاعدة 50/30/20','قاعدة 50/30/20'],['report','📝','تقرير شهري','تقرير'],['stats','🏆','إحصائيات وإنجازات','إحصائيات'],['backup','💾','نسخة احتياطية','نسخة احتياطية'],['lock','🔒','قفل التطبيق','قفل التطبيق'],['cats','🏷️','فئات مخصصة','فئات مخصصة'],['weekly','📅','الحد الأسبوعي','الحد الأسبوعي'],['challenge','🏁','تحدي ٥٢ أسبوع','تحدي ٥٢'],['tpl','⚡','قوالب سريعة','قوالب سريعة'],['round','🪙','تقريب المصروف','تقريب المصروف'],['subs','🔔','الاشتراكات','الاشتراكات'],['health','❤️','الصحة المالية','الصحة المالية'],['whatif','🔮','سيناريو لو','سيناريو'],['splitr','🧮','توزيع الباقي','توزيع الباقي'],['piggy','🐷','الحصالة','الحصالة'],['cal','📆','تقويم المصاريف','تقويم المصاريف'],['trend','📈','تطور فلوسك','تطور فلوسك'],['mlock','🔐','قفل الشهر','قفل الشهر'],['homec','🏠','كروت الرئيسية','كروت الرئيسية'],['disp','🔠','حجم الخط','حجم الخط'],['tags','#️⃣','الوسوم','الوسوم'],['events','🎉','المناسبات','المناسبات'],['fx','💱','العملات','العملات'],['theme','🎨','ألوان التطبيق','ألوان التطبيق']];
+function tileInfo(k){if(k==='weekly')return S.wk.on?'مفعّل':'مقفول';if(k==='challenge')return S.ch.on?'مفعّل':'مقفول';if(k==='debt'){var n=S.debt.filter(function(x){return !x.done}).length;return n?n+' مفتوح':''}
+  if(k==='wish')return S.wish.length?S.wish.length+' حاجة':'';if(k==='rec')return S.rec.length?S.rec.length+' ثابت':'';
+  if(k==='jam')return S.jam.length?S.jam.length+' جمعية':'';if(k==='acc')return S.acc.length?f(sum(S.acc,'bal')):'';return ''}
+var gopen={},GRP=[['الأهم',['budget','debt','acc','rec','jam','backup'],true],['خطط وأهداف',['weekly','challenge','wish','events','piggy','splitr','round'],false],['تحليلات وتقارير',['rule','report','stats','health','whatif','trend','cal','tags','subs'],false],['إعدادات وتخصيص',['cats','tpl','fx','mlock','homec','disp','theme','lock'],false]];
+function morePage(){
+  if(!sub){var res0=[];
+    GRP.forEach(function(gp,gi){var items=gp[1].map(function(k){return SECS.filter(function(x){return x[0]===k})[0]}).filter(Boolean),open=gp[2]||gopen[gi];
+      if(gp[2])res0.push(h('div',{class:'note',style:'font-weight:700;margin:4px 0 8px'},'⭐ '+gp[0]));
+      else res0.push(h('button',{class:'gh',style:'width:100%;text-align:right;margin:12px 0 8px;font-weight:700',onclick:function(){gopen[gi]=!gopen[gi];render()}},(open?'▴ ':'▾ ')+gp[0]+' ('+items.length+')'));
+      if(open){var g=h('div',{class:'tiles'});items.forEach(function(x){g.appendChild(h('button',{class:'tile',onclick:function(){sub=x[0];gopen[gi]=true;window.scrollTo(0,0);render()}},h('span',{class:'ti'},x[1]),h('span',{},x[2]),tileInfo(x[0])?h('small',{},tileInfo(x[0])):null))});res0.push(g)}});
+    return res0}
+  var sc=SECS.filter(function(x){return x[0]===sub})[0],res=[h('div',{class:'mnav'},h('button',{class:'ic','aria-label':'رجوع',onclick:function(){sub='';window.scrollTo(0,0);render()}},'→'),h('b',{},sc[1]+' '+sc[2]),h('span',{style:'width:40px'}))];
+  morePageAll().forEach(function(c){var t=c.firstChild?c.firstChild.textContent:'';if(t.indexOf(sc[3])===0)res.push(c)});
+  return res}
+var er='',ej='',adv=false,qmin=0,qmax=0,qd1='',qd2='';
+function toast(m,undo){render();var t=h('div',{class:'toast'},h('span',{},m),h('button',{onclick:function(){undo()}},'تراجع'));document.getElementById('app').appendChild(t);setTimeout(function(){if(t.parentNode)t.parentNode.removeChild(t)},5000)}
+function weekSpent(){var d=new Date();d.setDate(d.getDate()-((d.getDay()+1)%7));var st=ds(d);return sum(S.exp.filter(function(e){return e.date>=st&&e.date<=today}),'amt')}
+function chWeek(){return Math.floor((new Date(today)-new Date(S.ch.start))/6048e5)+1}
+function homeX(out){homeY(out);
+  if(S.wk.on&&S.wk.amt>0){var sp=weekSpent(),lf=S.wk.amt-sp,p=Math.min(100,Math.round(sp/S.wk.amt*100));
+    out.push(h('div',{class:'card'},h('h3',{},'الحد الأسبوعي'),h('div',{class:'bar'},h('div',{class:'fill',style:'width:'+p+'%;'+(lf<0?'background:var(--neg)':'')})),h('div',{class:'stats'},h('span',{},'صرفت '+f(sp)),h('span',{},lf>=0?'فاضل '+f(lf):'عدّيت بـ '+f(-lf)),h('span',{},'الحد '+f(S.wk.amt)))))}
+  if(S.ch.on&&S.ch.start){var wn=chWeek();
+    if(wn>=1&&wn<=52)out.push(h('div',{class:'card'},h('h3',{},'تحدي الـ ٥٢ أسبوع'),h('div',{class:'top'},h('span',{},'الأسبوع '+wn+' · المطلوب '+f(wn*S.ch.base)),S.ch.done[wn-1]?h('b',{class:'done'},'تم ✅'):h('button',{onclick:function(){S.ch.done[wn-1]=true;save();render()}},'تم'))))}
+}
+function cmpCard(by,ks){var pv={};mExpL(shift(vm,-1)).forEach(function(e){pv[e.cat]=(pv[e.cat]||0)+e.amt});
+  var c=h('div',{class:'card'},h('h3',{},'مقارنة بالشهر اللي فات'));
+  ks.forEach(function(k){var p=pv[k]||0,d=p>0?Math.round((by[k]-p)/p*100):null;
+    c.appendChild(h('div',{class:'li'},h('div',{class:'m'},catIcon(k)+' '+k,h('small',{},'دلوقتي '+f(by[k])+' · قبلها '+f(p))),h('b',{style:'color:var('+(d===null||d>0?'--neg':'--pos')+')'},d===null?'جديد':(d>0?'▲ ':'▼ ')+Math.abs(d)+'٪')))});
+  return c}
+function moreX(out){moreY(out);
+  var k=sec('فئات مخصصة');
+  S.cats.forEach(function(x){k.appendChild(h('div',{class:'li'},h('div',{class:'m'},x[1]+' '+x[0]),h('button',{class:'gh',onclick:function(){S.cats=S.cats.filter(function(y){return y[0]!==x[0]});for(var z=CATS.length-1;z>=0;z--)if(CATS[z][0]===x[0])CATS.splice(z,1);save();render()}},'✕')))});
+  var kn=h('input',{placeholder:'اسم الفئة (قهوة، بنزين...)'}),ke=h('input',{placeholder:'إيموجي',style:'flex:0 0 80px',value:'🏷️'});
+  k.appendChild(h('div',{class:'row',style:'margin:8px 0 0'},ke,kn,h('button',{onclick:function(){var nm=kn.value.trim();if(!nm||CATS.some(function(x){return x[0]===nm}))return;var c2=[nm,ke.value.trim()||'🏷️'];S.cats.push(c2);CATS.push(c2);save();render()}},'+')));
+  k.appendChild(h('div',{class:'note'},'حذف الفئة مش بيمسح مصاريفها القديمة، بتفضل ظاهرة بأيقونة عامة.'));out.push(k);
+  var w=sec('الحد الأسبوعي'),wi=h('input',{type:'number',inputmode:'decimal',placeholder:'المبلغ الأسبوعي',value:S.wk.amt||''});
+  w.appendChild(h('div',{class:'note'},S.wk.on?'مفعّل ✅ وبيظهر في الرئيسية':'مقفول ⛔ ومش بيظهر'));
+  w.appendChild(h('div',{class:'row'},wi,h('button',{onclick:function(){S.wk.amt=parseFloat(wi.value)||0;save();render()}},'حفظ')));
+  w.appendChild(h('button',{class:S.wk.on?'w':'',style:'width:100%',onclick:function(){S.wk.on=!S.wk.on;save();render()}},S.wk.on?'إلغاء التفعيل':'تفعيل الحد الأسبوعي'));
+  w.appendChild(h('div',{class:'note'},'الأسبوع بيبدأ من السبت.'));out.push(w);
+  var c=sec('تحدي ٥٢ أسبوع'),bi=h('input',{type:'number',inputmode:'decimal',placeholder:'مبلغ الأسبوع الأول',value:S.ch.base||''});
+  c.appendChild(h('div',{class:'note'},'كل أسبوع بتحوّش مبلغ بيزيد: الأسبوع ١ = المبلغ، والأسبوع ٢ = ضعفه، وهكذا. إجمالي ٥٢ أسبوع = '+f(S.ch.base*1378)));
+  c.appendChild(h('div',{class:'row'},bi,h('button',{onclick:function(){var v=parseFloat(bi.value);if(v>0){S.ch.base=v;save();render()}}},'حفظ')));
+  c.appendChild(h('button',{class:S.ch.on?'w':'',style:'width:100%;margin-bottom:8px',onclick:function(){S.ch.on=!S.ch.on;if(S.ch.on&&!S.ch.start)S.ch.start=today;save();render()}},S.ch.on?'إلغاء التفعيل':'تفعيل التحدي'));
+  if(S.ch.on){var tt=0;for(var i=1;i<=52;i++)if(S.ch.done[i-1])tt+=i*S.ch.base;
+    c.appendChild(h('div',{class:'note'},'جمعت '+f(tt)+' من '+f(S.ch.base*1378)));
+    var g=h('div',{style:'display:grid;grid-template-columns:repeat(6,1fr);gap:6px'});
+    for(var n=1;n<=52;n++)(function(n){g.appendChild(h('button',{class:S.ch.done[n-1]?'':'gh',style:'padding:6px 0;font-size:12px',onclick:function(){S.ch.done[n-1]=!S.ch.done[n-1];save();render()}},String(n)))})(n);
+    c.appendChild(g)}
+  out.push(c)}
+function dayLabel(d){return d===today?'النهاردة':d===ds(new Date(Date.now()-864e5))?'امبارح':d}
+function ruApply(v){if(!S.ru.on)return;var g=S.goals.filter(function(x){return x.id===S.ru.goal})[0],st=S.ru.step||5,up=Math.ceil(v/st)*st-v;if(g&&up>0){g.saved+=up;(g.log=g.log||[]).push({d:today,a:up})}}
+function homeY(out){if(S.exp.length>=15&&(!S.lastBk||(new Date(today)-new Date(S.lastBk))/864e5>30))out.push(h('div',{class:'card note',style:'color:var(--neg)'},'💾 عدّى وقت من آخر نسخة احتياطية. اعمل واحدة من المزيد ثم النسخة الاحتياطية.'));
+  var d7=new Date();d7.setDate(d7.getDate()-6);var st7=ds(d7),l7=S.exp.filter(function(e){return e.date>=st7&&e.date<=today}),b7={};
+  l7.forEach(function(e){b7[e.cat]=(b7[e.cat]||0)+e.amt});var tk=Object.keys(b7).sort(function(a,b){return b7[b]-b7[a]})[0];
+  if(l7.length)out.push(h('div',{class:'card'},h('h3',{},'آخر ٧ أيام'),h('div',{class:'stats'},h('span',{},'صرفت '+f(sum(l7,'amt'))),h('span',{},'متوسط يومي '+f(sum(l7,'amt')/7)),h('span',{},tk?catIcon(tk)+' '+tk:''))));
+  if(vm==cur&&new Date().getDate()<=3&&!mInc(cur))out.push(h('div',{class:'card note',style:'color:var(--neg)'},'📅 الشهر بدأ: سجّل دخلك وراجع ميزانيتك.'));
+  if(!S.tour)out.push(h('div',{class:'card'},h('h3',{},'جولة سريعة 👋'),h('div',{class:'note'},'• زر + في صفحة المصاريف بيضيف مصروف. • من "المزيد" تفعّل الحد الأسبوعي والتحدي والقوالب. • ✏️ للتعديل و✕ للحذف (وفي تراجع بعد الحذف). • تقدر تخفي أي كارت من هنا من "كروت الرئيسية".'),h('button',{onclick:function(){S.tour=1;save();render()}},'تمام، فهمت')))}
+function moreY(out){moreZ(out);
+  var tpl=sec('قوالب سريعة');
+  S.tpl.forEach(function(t,i){tpl.appendChild(h('div',{class:'li'},h('div',{class:'m'},t.name,h('small',{},catIcon(t.cat)+' '+t.cat)),h('b',{},f(t.amt)),h('button',{class:'gh',onclick:function(){S.tpl.splice(i,1);save();render()}},'✕')))});
+  var tn=h('input',{placeholder:'الاسم (قهوة...)'}),ta=h('input',{type:'number',inputmode:'decimal',placeholder:'المبلغ'}),tc=h('select');
+  CATS.forEach(function(c){tc.appendChild(h('option',{value:c[0]},c[1]+' '+c[0]))});
+  tpl.appendChild(h('div',{class:'row',style:'margin:8px 0'},tn,ta));
+  tpl.appendChild(h('div',{class:'row',style:'margin:0'},tc,h('button',{onclick:function(){var v=parseFloat(ta.value);if(!tn.value.trim()||!(v>0))return;S.tpl.push({name:tn.value.trim(),amt:v,cat:tc.value});save();render()}},'+ إضافة')));
+  tpl.appendChild(h('div',{class:'note'},'بتظهر كأزرار سريعة فوق في نافذة "مصروف جديد".'));out.push(tpl);
+  var ru=sec('تقريب المصروف'),st=h('input',{type:'number',value:S.ru.step||5}),gs=h('select');
+  S.goals.forEach(function(g){var o=h('option',{value:g.id},g.icon+' '+g.name);if(g.id===S.ru.goal)o.selected=true;gs.appendChild(o)});
+  ru.appendChild(h('div',{class:'note'},(S.ru.on?'مفعّل ✅':'مقفول ⛔')+' · كل مصروف بيتقرّب لأقرب رقم تحدده، والفرق بيتحوّل لهدف من فكتك. (مثال: 47 تتقرّب لـ 50 والـ 3 تروح للهدف)'));
+  if(!S.goals.length)ru.appendChild(h('div',{class:'note'},'ضيف هدف الأول عشان يتحوّل له الفرق.'));
+  else{ru.appendChild(h('div',{class:'row'},st,gs));
+    ru.appendChild(h('div',{class:'row',style:'margin:0'},h('button',{onclick:function(){S.ru.step=parseInt(st.value)||5;S.ru.goal=gs.value;save();render()}},'حفظ'),h('button',{class:S.ru.on?'w':'',onclick:function(){S.ru.step=parseInt(st.value)||5;S.ru.goal=gs.value;S.ru.on=!S.ru.on;save();render()}},S.ru.on?'إلغاء التفعيل':'تفعيل')))}
+  out.push(ru);
+  var mt=sum(S.rec,'amt'),sb=sec('الاشتراكات والمصاريف الثابتة');
+  sb.appendChild(h('div',{class:'grid2',style:'margin:0 0 8px'},stat('كل شهر',mt),stat('كل سنة',mt*12,'neg')));
+  S.rec.forEach(function(x){sb.appendChild(h('div',{class:'li'},h('div',{class:'m'},catIcon(x.cat)+' '+x.name,h('small',{},'يوم '+x.day+' من كل شهر')),h('b',{},f(x.amt*12)+' / سنة')))});
+  if(!S.rec.length)sb.appendChild(h('div',{class:'note'},'ضيف اشتراكاتك من مربع "المصاريف الثابتة".'));out.push(sb);
+  var inc=mInc(cur),ex=mExp(cur),sr=inc>0?Math.max(0,(inc-ex)/inc):0,a1=Math.min(40,Math.round(sr/0.2*40)),by2={};
+  mExpL(cur).forEach(function(e){by2[e.cat]=(by2[e.cat]||0)+e.amt});
+  var bk=CATS.filter(function(c){return S.bud[c[0]]>0}),ok=bk.filter(function(c){return (by2[c[0]]||0)<=S.bud[c[0]]}).length,a2=bk.length?Math.round(ok/bk.length*30):15;
+  var ow=sum(S.debt.filter(function(x){return !x.done&&x.dir==='me'}),'amt'),a3=inc>0?(ow/inc<0.1?15:ow/inc<0.3?8:0):8,a4=Math.min(15,streak()),tot=a1+a2+a3+a4;
+  var hs=sec('الصحة المالية');
+  hs.appendChild(h('div',{class:'hero card',style:'margin:0 0 8px'},h('b',{class:'big'},tot+' / 100'),h('span',{},tot>=80?'ممتاز 💚':tot>=60?'كويس 👍':tot>=40?'محتاج شوية انتباه':'محتاج تحسين ⚠️')));
+  [['التوفير (حتى 40)',a1],['الالتزام بالميزانيات (حتى 30)',a2],['الديون (حتى 15)',a3],['الانتظام في التسجيل (حتى 15)',a4]].forEach(function(x){hs.appendChild(h('div',{class:'li'},h('div',{class:'m'},x[0]),h('b',{},String(x[1]))))});
+  out.push(hs);
+  var wi=sec('سيناريو "لو"'),ex2=h('input',{type:'number',inputmode:'decimal',placeholder:'لو وفرت كام زيادة كل شهر؟'}),res=h('div');
+  wi.appendChild(ex2);
+  wi.appendChild(h('button',{style:'width:100%;margin:8px 0',onclick:function(){res.innerHTML='';var x=parseFloat(ex2.value);if(!(x>0))return;S.goals.forEach(function(g){var l=g.target-g.saved;if(l<=0)return;var m=Math.ceil(l/x),d=new Date();d.setMonth(d.getMonth()+m);res.appendChild(h('div',{class:'li'},h('div',{class:'m'},g.icon+' '+g.name,h('small',{},'بعد '+m+' شهر تقريبًا')),h('b',{},MN[d.getMonth()]+' '+d.getFullYear())))})}},'احسب'));
+  wi.appendChild(res);out.push(wi);
+  var sp=sec('توزيع الباقي على الأهداف'),pi=[],rem=Math.max(0,inc-ex-(S.sd[cur]||0));
+  sp.appendChild(h('div',{class:'note'},'المتبقي من '+mname(cur)+' (بعد اللي اتوزّع): '+f(rem)));
+  S.goals.forEach(function(g){var i=h('input',{type:'number',placeholder:'٪',value:g.pct||'',style:'flex:0 0 80px'});pi.push([g,i]);sp.appendChild(h('div',{class:'row'},h('span',{style:'flex:1;align-self:center'},g.icon+' '+g.name),i))});
+  if(S.goals.length)sp.appendChild(h('button',{style:'width:100%',onclick:function(){var t=0;pi.forEach(function(x){x[0].pct=parseFloat(x[1].value)||0;t+=x[0].pct});if(t>100||!(rem>0)){save();render();return}var dn=0;pi.forEach(function(x){var a=Math.round(rem*x[0].pct/100);if(a>0){x[0].saved+=a;dn+=a;(x[0].log=x[0].log||[]).push({d:today,a:a})}});S.sd[cur]=(S.sd[cur]||0)+dn;save();render()}},'وزّع الباقي (مجموع النسب لحد 100٪)'));
+  out.push(sp);
+  var pg=sec('الحصالة'),pa=h('input',{type:'number',inputmode:'decimal',placeholder:'المبلغ'});
+  pg.appendChild(h('div',{class:'grid2',style:'margin:0 0 8px'},stat('في الحصالة',S.pig||0,'pos')));
+  pg.appendChild(h('div',{class:'row',style:'margin:0'},pa,h('button',{onclick:function(){var v=parseFloat(pa.value);if(v>0){S.pig=(S.pig||0)+v;save();render()}}},'+'),h('button',{class:'w',onclick:function(){var v=parseFloat(pa.value);if(v>0){S.pig=Math.max(0,(S.pig||0)-v);save();render()}}},'−')));
+  pg.appendChild(h('div',{class:'note'},'للفكة والمبالغ الصغيرة، ومش داخلة في حسابات الشهر.'));out.push(pg);
+  var cl=sec('تقويم المصاريف ('+mname(vm)+')'),dim=new Date(+vm.slice(0,4),+vm.slice(5),0).getDate(),dsum={},mx=1;
+  mExpL(vm).forEach(function(e){var d=+e.date.slice(8);dsum[d]=(dsum[d]||0)+e.amt});for(var k in dsum)mx=Math.max(mx,dsum[k]);
+  cl.appendChild(mnav());var gr=h('div',{style:'display:grid;grid-template-columns:repeat(7,1fr);gap:4px'});
+  for(var d=1;d<=dim;d++){var al=(dsum[d]||0)/mx;gr.appendChild(h('div',{style:'text-align:center;padding:8px 0;border-radius:8px;font-size:13px;background:'+(dsum[d]?'color-mix(in srgb,var(--neg) '+Math.round(15+al*70)+'%,var(--card))':'var(--tr)')},String(d)))}
+  cl.appendChild(gr);cl.appendChild(h('div',{class:'note'},'اللون الأغمق = صرف أكتر في اليوم ده.'));out.push(cl);
+  var tr=sec('تطور فلوسك (آخر ١٢ شهر)'),pts=[],cum=0;
+  for(var q2=11;q2>=0;q2--){var m2=shift(cur,-q2);cum+=mInc(m2)-mExp(m2);pts.push(cum)}
+  var mn=Math.min.apply(null,pts.concat([0])),mxx=Math.max.apply(null,pts.concat([0])),rg=(mxx-mn)||1;
+  var pl=pts.map(function(v,i){return Math.round(i*300/11)+','+Math.round(104-(v-mn)/rg*100)}).join(' '),sv=h('div',{style:'color:var(--ac)'});
+  sv.innerHTML='<svg viewBox="0 0 300 110" width="100%" height="110" preserveAspectRatio="none"><polyline fill="none" stroke="currentColor" stroke-width="2.5" points="'+pl+'"/></svg>';
+  tr.appendChild(sv);tr.appendChild(h('div',{class:'note'},'الدخل ناقص المصروفات متراكم على آخر ١٢ شهر: '+f(cum)));out.push(tr);
+  var ml=sec('قفل الشهر'),lk=!!S.lock[vm];
+  ml.appendChild(mnav());
+  ml.appendChild(h('div',{class:'note'},lk?'🔒 '+mname(vm)+' مقفول: مفيش إضافة أو تعديل أو حذف مصاريف فيه.':mname(vm)+' مفتوح.'));
+  ml.appendChild(h('button',{style:'width:100%',class:lk?'w':'',onclick:function(){if(lk)delete S.lock[vm];else S.lock[vm]=true;save();render()}},lk?'فتح الشهر':'قفل الشهر'));out.push(ml);
+  var HC=['فلوسي','أقرب هدف توصله','توزيع المصروفات','المصروفات حسب الفئة','مقارنة بالشهر اللي فات','الميزانيات','آخر ٦ شهور','آخر ٧ أيام','الحد الأسبوعي','تحدي الـ ٥٢ أسبوع'],hc=sec('كروت الرئيسية');
+  HC.forEach(function(t){var off=S.hc[t];hc.appendChild(h('div',{class:'li'},h('div',{class:'m'},t),h('button',{class:off?'w':'',style:'padding:6px 14px',onclick:function(){if(off)delete S.hc[t];else S.hc[t]=1;save();render()}},off?'مخفي':'ظاهر')))});out.push(hc);
+  var ds2=sec('حجم الخط والعرض'),zr=h('div',{class:'row',style:'margin:0'});
+  [['صغير',0.92],['عادي',1],['كبير',1.12]].forEach(function(x){zr.appendChild(h('button',{class:(S.fs||1)===x[1]?'':'gh',style:'flex:1',onclick:function(){S.fs=x[1];save();render()}},x[0]))});
+  ds2.appendChild(zr);out.push(ds2);
+}
+var ft='',oe='';
+function tagsOf(e){return (e.note||'').match(/#[^\s#]+/g)||[]}
+function tagChips(out){var tg={};mExpL(vm).forEach(function(e){tagsOf(e).forEach(function(t){tg[t]=(tg[t]||0)+e.amt})});var ks=Object.keys(tg);if(!ks.length&&!ft)return;
+  var c=h('div',{class:'chips'});c.appendChild(h('button',{class:'chip'+(ft?'':' on'),onclick:function(){ft='';render()}},'كل الوسوم'));
+  ks.forEach(function(t){c.appendChild(h('button',{class:'chip'+(ft===t?' on':''),onclick:function(){ft=t;render()}},t))});out.push(c)}
+function moreZ(out){
+  var tg={},tc=sec('الوسوم');
+  mExpL(vm).forEach(function(e){tagsOf(e).forEach(function(t){tg[t]=(tg[t]||0)+e.amt})});
+  tc.appendChild(mnav());var ks=Object.keys(tg).sort(function(a,b){return tg[b]-tg[a]});
+  ks.forEach(function(t){tc.appendChild(h('div',{class:'li'},h('div',{class:'m'},t),h('b',{},f(tg[t]))))});
+  tc.appendChild(h('div',{class:'note'},ks.length?'مجموع كل وسم في الشهر ده.':'اكتب #وسم في ملاحظة أي مصروف (مثلاً #سينما) وهيتجمّع هنا ويظهر كزر فلتر في المصاريف.'));out.push(tc);
+  var ev=sec('المناسبات'),en=h('input',{placeholder:'اسم المناسبة (سفر، عيد...)'}),eb=h('input',{type:'number',inputmode:'decimal',placeholder:'الميزانية'});
+  S.ev.forEach(function(v,i){var sp=sum(v.items,'a'),p=Math.min(100,Math.round(sp/v.budget*100)),over=sp>v.budget,li=h('div',{class:'li',style:'display:block'});
+    li.appendChild(h('div',{class:'top'},h('b',{},'🎉 '+v.name),h('span',{class:'acts'},h('button',{class:'gh',onclick:function(){oe=oe===v.id?'':v.id;render()}},oe===v.id?'▴':'▾'),h('button',{class:'gh',onclick:function(){S.ev.splice(i,1);save();render()}},'✕'))));
+    li.appendChild(h('div',{class:'bar'},h('div',{class:'fill',style:'width:'+p+'%;'+(over?'background:var(--neg)':'')})));
+    li.appendChild(h('div',{class:'stats'},h('span',{},'صرفت '+f(sp)),h('span',{},over?'عدّيت بـ '+f(sp-v.budget):'فاضل '+f(v.budget-sp)),h('span',{},'الميزانية '+f(v.budget))));
+    if(oe===v.id){
+      v.items.forEach(function(it,j){li.appendChild(h('div',{class:'li'},h('div',{class:'m'},it.n,h('small',{},it.d)),h('b',{},f(it.a)),h('button',{class:'gh',onclick:function(){S.exp=S.exp.filter(function(x){return x.id!==it.eid});v.items.splice(j,1);save();render()}},'✕')))});
+      var nn=h('input',{placeholder:'بند (حجز، هدية...)'}),na=h('input',{type:'number',inputmode:'decimal',placeholder:'المبلغ'});
+      li.appendChild(h('div',{class:'row',style:'margin:8px 0 0'},nn,na,h('button',{onclick:function(){var a=parseFloat(na.value);if(!nn.value.trim()||!(a>0))return;var id=uid();S.exp.push({id:id,amt:a,cat:'أخرى',note:v.name+' - '+nn.value.trim(),date:today});v.items.push({id:uid(),n:nn.value.trim(),a:a,d:today,eid:id});save();render()}},'+')));
+      li.appendChild(h('div',{class:'note'},'كل بند بيتسجل كمان كمصروف عادي بتاريخ النهاردة.'))}
+    ev.appendChild(li)});
+  ev.appendChild(h('div',{class:'row',style:'margin:8px 0 0'},en,eb,h('button',{onclick:function(){var b=parseFloat(eb.value);if(!en.value.trim()||!(b>0))return;S.ev.push({id:uid(),name:en.value.trim(),budget:b,items:[]});save();render()}},'+')));out.push(ev);
+  var fx=sec('العملات'),fk=h('input',{placeholder:'رمز العملة (USD)'}),fr=h('input',{type:'number',inputmode:'decimal',placeholder:'سعر الصرف بعملتك'});
+  S.fx.forEach(function(x,i){fx.appendChild(h('div',{class:'li'},h('div',{class:'m'},x[0]),h('b',{},'1 = '+x[1]),h('button',{class:'gh',onclick:function(){S.fx.splice(i,1);save();render()}},'✕')))});
+  fx.appendChild(h('div',{class:'row',style:'margin:8px 0 0'},fk,fr,h('button',{onclick:function(){var r=parseFloat(fr.value);if(!fk.value.trim()||!(r>0))return;S.fx.push([fk.value.trim().toUpperCase(),r]);save();render()}},'+')));
+  fx.appendChild(h('div',{class:'note'},'بتظهر خانة عملة في "مصروف جديد"، والمبلغ بيتحوّل ويتسجل بعملتك الأساسية.'));out.push(fx)}
+function sheet(){
+  var a=h("input",{type:"number",inputmode:"decimal",placeholder:"المبلغ"}),c=h("select");
+  CATS.forEach(function(x){c.appendChild(h("option",{value:x[0]},x[1]+" "+x[0]))});
+  var nt=h("input",{placeholder:"ملاحظة (اختياري)"}),d=h("input",{type:"date",value:today}),sp=h("input",{type:"number",value:1,min:1,style:"flex:0 0 70px"});
+  var cu=h('select',{style:'flex:0 0 90px'},h('option',{value:'1'},'ج.م'));S.fx.forEach(function(x){cu.appendChild(h('option',{value:x[1]},x[0]))});var ki=h('select',{style:'flex:1'},h('option',{value:''},'النوع: حسب الفئة'),h('option',{value:'need'},'ضروري'),h('option',{value:'want'},'رفاهية'));var tp=h('div',{class:'chips'});S.tpl.forEach(function(t){tp.appendChild(h('button',{class:'chip',onclick:function(){a.value=t.amt;c.value=t.cat;nt.value=t.name}},'⚡ '+t.name+' '+t.amt))});if(S.lastCat)c.value=S.lastCat;setTimeout(function(){a.focus()},60);var close=function(){modal=false;render()};
+  var ov=h("div",{class:"ov",onclick:function(ev){if(ev.target===ov)close()}},
+    h("div",{class:"sheet"},h("h3",{},"مصروف جديد"),S.tpl.length?tp:null,h("div",{class:"row"},a,c),h("div",{class:"row"},ki,S.fx.length?cu:null),h("div",{class:"row"},nt,d),h("div",{class:"row"},h("span",{style:"align-self:center;font-size:14px;flex:1"},"مقسوم على كام شخص (معاك)؟"),sp),
+      h("div",{class:"row",style:"margin:0"},
+        h("button",{style:"flex:1",onclick:function(){var raw=parseFloat(a.value),v=Math.round(raw*(parseFloat(cu.value)||1)*100)/100,cl=cu.options[cu.selectedIndex].text;if(!(v>0)||!d.value)return;if(S.lock[d.value.slice(0,7)]){a.value='';a.placeholder='🔒 الشهر ده مقفول';return}S.lastCat=c.value;ruApply(v);var n=parseInt(sp.value)||1;S.exp.push({id:uid(),amt:v,cat:c.value,note:nt.value.trim()+(cu.value!=='1'?' ('+raw+' '+cl+')':'')+(n>1?' (مقسوم على '+n+')':''),date:d.value,kind:ki.value});if(n>1)S.debt.push({id:uid(),who:'نصيب صحابك: '+(nt.value.trim()||c.value),amt:Math.round(v*(n-1)/n*100)/100,dir:'they',due:''});vm=d.value.slice(0,7);save();close()}},"حفظ"),
+        h("button",{class:"gh",onclick:close},"إلغاء"))));
+  return ov;
+}
+
+function render(){
+  var app=document.getElementById("app");app.innerHTML="";
+  app.style.zoom=S.fs||1;if(S.pin&&!unlocked){lockScreen(app);return}
+  var T={home:"أهدافي ومصاريفي",goals:"الأهداف",exp:"المصاريف والدخل",more:"المزيد"};
+  app.appendChild(h("div",{class:"hd"},h("h1",{style:"flex:1"},T[page]),h("button",{class:"ic","aria-label":"إخفاء الأرقام",style:"margin-inline-end:8px",onclick:function(){S.hide=!S.hide;save();render()}},S.hide?"🙈":"👁️"),
+    h("button",{class:"ic","aria-label":"تبديل الثيم",onclick:function(){S.theme=isDark()?"light":"dark";applyTheme();save();render()}},isDark()?"☀️":"🌙")));
+  var body=page=="home"?home():page=="goals"?goalsPage():page=="more"?morePage():expPage();
+  body.forEach(function(x){app.appendChild(x)});
+  var nav=h("nav",{});
+  [["home","🏠","الرئيسية"],["goals","🎯","الأهداف"],["exp","💳","المصاريف"],["more","⚙️","المزيد"]].forEach(function(t){
+    nav.appendChild(h("button",{class:page==t[0]?"on":"",onclick:function(){sub='';page=t[0];eg=-1;ee="";ei=-1;dg="";window.scrollTo(0,0);render()}},h("b",{},t[1]),t[2]))});
+  app.appendChild(nav);
+  if(page=="exp")app.appendChild(h("button",{class:"fab","aria-label":"مصروف جديد",onclick:function(){modal=true;render()}},"+"));
+  if(modal)app.appendChild(sheet());
+  if(qf){var qs=document.getElementById('qs');if(qs){qs.focus();qs.setSelectionRange(qs.value.length,qs.value.length)}qf=false}
+}
+applyRec();applyTheme();render();
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+if(document.addEventListener)document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'){var t=ds();if(t!==today){today=t;if(vm===cur)vm=t.slice(0,7);cur=t.slice(0,7)}applyRec();render()}});
+if("serviceWorker" in navigator){try{navigator.serviceWorker.register("sw.js")}catch(e){}}
+</script>
+</body>
+</html>
